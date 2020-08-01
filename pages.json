@@ -1,0 +1,49 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"enablePullDownRefresh": true,
+				"navigationBarTitleText": "卡耐熊童装"
+			}
+		},
+		{
+			"path": "pages/albumDetail/albumDetail",
+			"style": {
+				"enablePullDownRefresh": true,
+				"navigationBarTitleText": "卡耐熊童装"
+			}
+		}, {
+			"path": "pages/admin/admin",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		}, {
+			"path": "pages/adminAlbum/adminAlbum",
+			"style": {
+				"enablePullDownRefresh": true,
+				"navigationBarTitleText": "卡耐熊相册管理"
+			}
+		},
+		{
+			"path": "pages/adminAlbum/photo",
+			"style": {
+				"enablePullDownRefresh": true,
+				"navigationBarTitleText": "上传照片"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "卡耐熊相册",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F8F8F8"
+
+	},
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"cl-(.*)": "@/cool/ui/components/$1/$1.vue"
+		}
+	}
+}
