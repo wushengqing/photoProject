@@ -6,7 +6,7 @@
 		<view class="flex-wrap" style="padding:20upx;justify-content: space-between;">
 			<navigator :key="item.id" :url="`../albumDetail/albumDetail?id=${item.id}&title=${item.name}`" class="img-view mt-30"
 			 v-for="item in sTypeList">
-				<image class="img-bg" :src="item.minFileUrl|| '../../static/image/empty.png'"></image>
+				<image lazy-load class="img-bg" :src="item.minFileUrl|| '../../static/image/empty.png'"></image>
 				<view class="total-count"><text class="iconfont f22">&#xe616</text>{{ item.sum }}张</view>
 				<view class="desc-view">
 					<view class="img-title">{{ item.name }}</view>

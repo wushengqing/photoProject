@@ -2,7 +2,7 @@
 	<view class="">
 		<view class="img-list flex-wrap">
 			<view class="img-view2" v-for="(item,index) in imgList">
-				<image class="img-cover" :src="item.minFileUrl || item.fileUrl" @tap="previewImage(index)"></image>
+				<image lazy-load class="img-cover" :src="item.minFileUrl || item.fileUrl" @tap="previewImage(index)"></image>
 			</view>
 			<view class="page-footer tc">
 				<text v-if="loading">加载中...</text>
@@ -24,7 +24,7 @@
 				imgList: [],
 				pageInfo: {
 					currentPage: 1,
-					pageSize: 40,
+					pageSize: 18,
 					total: 0,
 				}
 			}

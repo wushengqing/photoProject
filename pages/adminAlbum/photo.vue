@@ -5,7 +5,7 @@
 				<text class="iconfont">&#xe617</text>
 			</view>
 			<view class="img-view2" v-for="(item,index) in imgList" :style="{display:item.hide?'none':''}">
-				<image class="img-cover" :src="item.minFileUrl||item.fileUrl" @tap="previewImage(index)"></image>
+				<image lazy-load class="img-cover" :src="item.minFileUrl||item.fileUrl" @tap="previewImage(index)"></image>
 				<view class="set-cover" @click.stop="setAsCover(item)"><text class="iconfont font28">&#xe619</text></view>
 				<view class="delete" @click.stop="deletePhoto(item)"><text class="iconfont f22">&#xe618</text></view>
 			</view>
@@ -33,7 +33,7 @@
 				},
 				pageInfo: {
 					currentPage: 1,
-					pageSize: 40,
+					pageSize: 18,
 					total: 0,
 				}
 			}
@@ -160,7 +160,20 @@
 			}
 		},
 		onLoad(options) {
+			let userInfo = uni.getStorageSync('userInfo') || '';
+			if (!userInfo || userInfo.userNum !== 'kanaixiong' || userInfo.userPassword !== 'knx123456') {
+				//跳转到登录
+				uni.navigateTo({
+					url: '../admin/admin'
+				});
+			}
 			this.id = parseInt(options.id);
+			if(!this.id){
+				//跳转到登录
+				uni.navigateTo({
+					url: '../adminAlbum/adminAlbum'
+				});
+			}
 			uni.setNavigationBarTitle({
 				title: decodeURIComponent(options.title)
 			});
