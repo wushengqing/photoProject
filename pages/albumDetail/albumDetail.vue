@@ -24,7 +24,7 @@
 				imgList: [],
 				pageInfo: {
 					currentPage: 1,
-					pageSize: 18,
+					pageSize: 21,
 					total: 0,
 				}
 			}
